@@ -10,13 +10,13 @@ P1_APP_DIR        = $(P1TMP)/Build/Products/Release/semaphorin.app
 package:
 	@rm -rf $(P1_REQUIRED)/*.deb
 
-	@git clone --recursive https://github.com/netsirkl64/semaphorin-High-Sierra
+	@git clone --recursive https://github.com/y08wilm/Semaphorin
 
-	@tar -czvf semaphorin.tar.gz ./semaphorin-High-Sierra/*
+	@tar -czvf semaphorin.tar.gz ./Semaphorin/*
 
 	@mv semaphorin.tar.gz Required/
 
-	@rm -rf semaphorin-High-Sierra
+	@rm -rf Semaphorin
 
 	@set -o pipefail; xcodebuild -jobs $(shell sysctl -n hw.ncpu) -project 'semaphorin.xcodeproj' -scheme semaphorin -configuration Release -arch x86_64 -derivedDataPath $(P1TMP) CODE_SIGNING_ALLOWED=NO DSTROOT=$(P1TMP)/install ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES=NO
 
