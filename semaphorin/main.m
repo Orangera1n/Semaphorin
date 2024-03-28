@@ -1,6 +1,6 @@
 //
 //  main.m
-//  palera1n
+//  semaphorin
 //
 //  Created by kristenlc on 12/18/22.
 //  Copyright © 2022 woofy. All rights reserved.
