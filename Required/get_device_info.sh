@@ -1,10 +1,10 @@
 #!/usr/bin/env bash
 
-mkdir -p /tmp/semaphorin/semaphorin-High-Sierra
-cd /tmp/semaphorin/semaphorin-High-Sierra
+mkdir -p /tmp/semaphorin/Semaphorin
+cd /tmp/semaphorin/Semaphorin
 
 os=$(uname)
-dir="$(pwd)/binaries/$os"
+dir="$(pwd)/$os"
 if [ "$os" = "Darwin" ]; then
     apples="$(system_profiler SPUSBDataType 2> /dev/null | grep -B1 'Vendor ID: 0x05ac' | grep 'Product ID:' | cut -dx -f2 | cut -d' ' -f1 | tail -r)"
 elif [ "$os" = "Linux" ]; then

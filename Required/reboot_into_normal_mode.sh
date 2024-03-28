@@ -1,10 +1,10 @@
 #!/usr/bin/env bash
 
-mkdir -p /tmp/semaphorin/semaphorin-High-Sierra
-cd /tmp/semaphorin/semaphorin-High-Sierra
+mkdir -p /tmp/semaphorin/Semaphorin
+cd /tmp/semaphorin/Semaphorin
 
 os=$(uname)
-dir="$(pwd)/binaries/$os"
+dir="$(pwd)/$os"
 
 step() {
 for i in $(seq "$1" -1 1); do

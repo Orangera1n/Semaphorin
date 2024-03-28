@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 
-mkdir -p /tmp/semaphorin/semaphorin-High-Sierra
-cd /tmp/semaphorin/semaphorin-High-Sierra
+mkdir -p /tmp/semaphorin/Semaphorin
+cd /tmp/semaphorin/Semaphorin
 
 os=$(uname)
 if [ "$os" = "Darwin" ]; then
