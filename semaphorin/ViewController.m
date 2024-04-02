@@ -18,8 +18,23 @@
                                   @"iPad4,2",
                                   @"iPad4,5",
                                   @"iPad4,4",
+                                  @"iPhone7,1",
+                                  @"iPhone7,2",
+                                  @"iPhone8,1",
+                                  @"iPhone8,2",
+                                  @"iPhone8,4",
+                                  @"iPhone10,3",
+                                  @"iPhone10,6",
+                                  @"iPad4,9",
+                                  @"iPad4,7",
+                                  @"iPad4,8",
+                                  @"iPad5,4",
+                                  @"iPad5,3",
+                                  @"iPad5,1",
+                                  @"iPad5,2",
                                   @"iPhone6,1",
                                   @"iPhone6,2"];
+    
     
     NSString* get_device_mode = [[NSBundle mainBundle] pathForResource:@"get_device_mode" ofType:@"sh"];
     NSString* get_device_info = [[NSBundle mainBundle] pathForResource:@"get_device_info" ofType:@"sh"];
@@ -43,6 +58,32 @@
     NSAlert *alert = [NSAlert alertWithMessageText:@"semaphorin.sh" defaultButton:@"OK" alternateButton:@"Cancel" otherButton:nil informativeTextWithFormat:@"What is the iOS version the device is running at the moment?\n\nWe have to ask you this only because you started the jailbreak process in dfu instead of Normal mode\n\nThis should only be used if your device is stuck in a boot loop or recovery mode"];
     
     NSComboBox* comboBox = [[NSComboBox alloc] initWithFrame:NSMakeRect(0, 0, 120, 24)];
+    [comboBox addItemWithObjectValue:@"15.8"];
+    [comboBox addItemWithObjectValue:@"15.7"];
+    [comboBox addItemWithObjectValue:@"15.6"];
+    [comboBox addItemWithObjectValue:@"15.5"];
+    [comboBox addItemWithObjectValue:@"15.4"];
+    [comboBox addItemWithObjectValue:@"15.3"];
+    [comboBox addItemWithObjectValue:@"15.2"];
+    [comboBox addItemWithObjectValue:@"15.1"];
+    [comboBox addItemWithObjectValue:@"15.0"];
+    [comboBox addItemWithObjectValue:@"14.8"];
+    [comboBox addItemWithObjectValue:@"14.7"];
+    [comboBox addItemWithObjectValue:@"14.6"];
+    [comboBox addItemWithObjectValue:@"14.5"];
+    [comboBox addItemWithObjectValue:@"14.4"];
+    [comboBox addItemWithObjectValue:@"14.3"];
+    [comboBox addItemWithObjectValue:@"14.2"];
+    [comboBox addItemWithObjectValue:@"14.1"];
+    [comboBox addItemWithObjectValue:@"14.0"];
+    [comboBox addItemWithObjectValue:@"13.7"];
+    [comboBox addItemWithObjectValue:@"13.6"];
+    [comboBox addItemWithObjectValue:@"13.5"];
+    [comboBox addItemWithObjectValue:@"13.4"];
+    [comboBox addItemWithObjectValue:@"13.3"];
+    [comboBox addItemWithObjectValue:@"13.2"];
+    [comboBox addItemWithObjectValue:@"13.1"];
+    [comboBox addItemWithObjectValue:@"13.0"];
     [comboBox addItemWithObjectValue:@"12.5.7"];
     [comboBox addItemWithObjectValue:@"12.5.6"];
     [comboBox addItemWithObjectValue:@"15.5.4"];
@@ -139,6 +180,9 @@
     NSAlert *alert = [NSAlert alertWithMessageText:@"semaphorin.sh" defaultButton:@"OK" alternateButton:@"Cancel" otherButton:nil informativeTextWithFormat:@"What is the iOS version that you are trying to restore to using our script?\n\nPlease refer to our support discord server if you are unsure of which versions your device supports before you try to downgrade.\n\nThank you for your interest in our project, it means a lot to us. We hope it works well for you."];
     
     NSComboBox* comboBox = [[NSComboBox alloc] initWithFrame:NSMakeRect(0, 0, 120, 24)];
+    [comboBox addItemWithObjectValue:@"11.1"];
+    [comboBox addItemWithObjectValue:@"11.0"];
+    [comboBox addItemWithObjectValue:@"10.3.3"];
     [comboBox addItemWithObjectValue:@"8.0"];
     [comboBox addItemWithObjectValue:@"7.1.2"];
     [comboBox addItemWithObjectValue:@"7.1.1"];
