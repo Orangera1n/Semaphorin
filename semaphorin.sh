@@ -978,11 +978,13 @@ _download_root_fs() {
                 fi
             fi
             "$bin"/dmg build "$dir"/$1/$cpid/$3/OS.dmg "$dir"/$1/$cpid/$3/rw.dmg
+	    rm "$dir"/$1/$cpid/$3/OS.dmg
             hdiutil attach -mountpoint /tmp/ios "$dir"/$1/$cpid/$3/rw.dmg
             sudo diskutil enableOwnership /tmp/ios
             sudo "$bin"/gnutar -cvf "$dir"/$1/$cpid/$3/OS.tar -C /tmp/ios .
             hdiutil detach /tmp/ios
             rm -rf /tmp/ios
+	    rm -rf "$dir"/$1/$cpid/$3/rw.dmg
             if [[ "$deviceid" == "iPhone6"* || "$deviceid" == "iPad4"* ]]; then
                "$bin"/irecovery -f /dev/null
             fi
@@ -1951,6 +1953,7 @@ if [[ "$ramdisk" == 1 || "$restore" == 1 || "$dump_blobs" == 1 || "$force_activa
                     }
                 }
             }
+	    rm -rf $dir/$deviceid/$cpid/$version/OS.tar
             if [[ "$version" == "7."* || "$version" == "8."* || "$version" == "9."* ]]; then
                 "$bin"/sshpass -p 'alpine' scp -o StrictHostKeyChecking=no -P 2222 "$dir"/jb/cydia_ios7.tar.gz root@localhost:/mnt2 2> /dev/null
                 "$bin"/sshpass -p 'alpine' ssh -o StrictHostKeyChecking=no -p2222 root@localhost "tar -xzvf /mnt2/cydia_ios7.tar.gz -C /mnt1"
